@@ -5,12 +5,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
 	<title>Markdown Previewer</title>
 </head>
-<body>
+<body onload="output()">
 	<main class="main">
 		<div class="input">
-			<textarea onchange="output()" value="test" id="input" name="input"></textarea>
+			<textarea
+				onchange="output()"
+				value="test"
+				id="input"
+				name="input">
+# h1
+
+Обычный текст, *жирный*, **курсив**, ***жирный курсив***
+
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+
+- список 1
+- список 2
+- список 3
+
+| Таблица     | 123            | 456     |
+|:-----------:|:---------------|--------:|
+| :D          | 101123123      | AAAAAAA |
+| :C          | 111312312      | SUS     |
+| OWO OWO OWO | 19274012712    | .       |
+
+[Ссылка на DuckDuckGo](https://duckduckgo.com)
+
+![Amogus](https://i.imgur.com/VIX8Yyh.png)</textarea>
 		</div>
 		<div class="output" id="output">
 		</div>
