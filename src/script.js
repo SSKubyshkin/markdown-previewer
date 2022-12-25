@@ -1,5 +1,9 @@
 function output() {
 	var text = document.getElementById("input").value;
-	text = text.replace(/(?:\r\n|\r|\n)/g, "<br>");
+	var converter = new showdown.Converter();
+
+	converter.setOption("tables", true);
+	text = converter.makeHtml(text);
+
 	document.getElementById("output").innerHTML = text;
 }
